@@ -19,11 +19,20 @@ public class DBUtils {
 
 	private final String DB_PASS;
 
-	private final String DB_URL = "jdbc:mysql://localhost:3306/ims";
+	private final String DB_URL;
 
 	private DBUtils(String username, String password) {
 		this.DB_USER = username;
 		this.DB_PASS = password;
+		this.DB_URL =  "jdbc:mysql://35.187.68.136:3306/ims";
+
+		init();
+	}
+	
+	private DBUtils(String username, String password, String testDB) {
+		this.DB_USER = username;
+		this.DB_PASS = password;
+		this.DB_URL =  "jdbc:mysql://35.187.68.136:3306/" + testDB;
 
 		init();
 	}
