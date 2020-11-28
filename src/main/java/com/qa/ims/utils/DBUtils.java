@@ -24,8 +24,8 @@ public class DBUtils {
 	private DBUtils(String username, String password) {
 		this.DB_USER = username;
 		this.DB_PASS = password;
-//		this.DB_URL =  "jdbc:mysql://35.187.68.136:3306/ims";    // URL to run on GCP for week 5 demo
-		this.DB_URL =  "jdbc:mysql://localhost:3306/ims";    // URL to run on local host for fat .jar generation
+		this.DB_URL =  "jdbc:mysql://35.187.68.136:3306/ims";    // URL to run on GCP for week 5 demo
+//		this.DB_URL =  "jdbc:mysql://localhost:3306/ims";    // URL to run on local host for fat .jar generation
 
 		init();
 	}
