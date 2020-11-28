@@ -112,9 +112,7 @@ public class OrderDAO implements Dao<Order> {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders WHERE id = " + id);) {
-			System.out.println(resultSet);
 			resultSet.next();
-			System.out.println("readOrder: " + id + "\t" + resultSet.next() + modelFromResultSet(resultSet));
 			return modelFromResultSet(resultSet);
 		} catch (Exception e) {
 			LOGGER.debug(e);
