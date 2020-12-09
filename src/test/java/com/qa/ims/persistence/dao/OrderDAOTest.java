@@ -52,28 +52,29 @@ public class OrderDAOTest {
 //	mockito testing stub
 	}
 
-	@Ignore // unsure why fail: cf msg looks identical, CHECK AGAIN!
+
 	@Test  // Test 3
 	public void testReadAll() {
+		List<Order> orders = new ArrayList<>();
 		List<Item> items = new ArrayList<>();
-		items.add(new Item(1L, "Hand sanitiser 50ml", 4.25));
-		assertEquals(new Order(1L, 1L,items), orderDAO.readAll());
+		items.add(new Item(1L, "hand sanitiser 50ml", 4.25));
+		orders.add(new Order(1L, 1L,items)); 
+		assertEquals(orders, orderDAO.readAll());
 	}
 	
-	@Ignore // unsure why fail: cf msg looks identical, CHECK AGAIN!
+
 	@Test
 	public void testReadLatest() {
 		List<Item> items = new ArrayList<>();
-		items.add(new Item(1L, "Hand sanitiser 50ml", 4.25));
+		items.add(new Item(1L, "hand sanitiser 50ml", 4.25));
 		assertEquals(new Order(1L, 1L, items), orderDAO.readLatest());
 	}
 
-	@Ignore // unsure why fail: cf msg looks identical, CHECK AGAIN!
 	@Test
 	public void testRead() {
 		final long ID = 1L;
 		List<Item> items = new ArrayList<>();
-		items.add(new Item(1L, "Hand sanitiser 50ml", 4.25));
+		items.add(new Item(1L, "hand sanitiser 50ml", 4.25));
 		assertEquals(new Order(ID, 1L, items), orderDAO.readOrder(ID));
 	}
 
